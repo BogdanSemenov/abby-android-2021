@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.cardview.widget.CardView
+import android.view.animation.AnimationUtils
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<CardView>(R.id.annotation).setOnClickListener {
             var intent = Intent(this, Description::class.java)
+            it.startAnimation(AnimationUtils.loadAnimation(this, R.anim.card_click_animation))
             startActivity(intent)
         }
     }
